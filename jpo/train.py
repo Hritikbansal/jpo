@@ -8,7 +8,7 @@ from datasets import Dataset, load_dataset
 from peft import LoraConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer, HfArgumentParser, TrainingArguments
 
-from custom_dove_trainer import CustomDoveTrainer
+from custom_jpo_trainer import CustomJpoTrainer
 # from trl import DPOTrainer
 from utils import *
 
@@ -189,8 +189,8 @@ if __name__ == "__main__":
         import wandb 
         wandb.init(project="project", config=vars(script_args), name=run_name)
 
-    # 5. initialize the Dove trainer
-    dove_trainer = CustomDoveTrainer(
+    # 5. initialize the Jpo trainer
+    jpo_trainer = CustomJpoTrainer(
         model,
         args=training_args,
         beta=script_args.beta,
@@ -204,15 +204,15 @@ if __name__ == "__main__":
     )
 
     # 6. train
-    # dove_trainer.train(resume_from_checkpoint=True)
-    dove_trainer.train()
-    dove_trainer.save_model(script_args.output_dir)
+    # jpo_trainer.train(resume_from_checkpoint=True)
+    jpo_trainer.train()
+    jpo_trainer.save_model(script_args.output_dir)
 
     # 7. save
     output_dir = os.path.join(script_args.output_dir, "final_checkpoint")
-    dove_trainer.model.save_pretrained(output_dir)
+    jpo_trainer.model.save_pretrained(output_dir)
 
 
 """
-    CUDA_VISIBLE_DEVICES=0 python vanilla_dove_trainer.py --dataset_name ../data/tldr_data/openai_tldr_unique_dpo_format.jsonl --eval_dataset_name ../data/tldr_data/val_dpo_format.jsonl --output_dir /local2/hbansal/pref_augment/
+    CUDA_VISIBLE_DEVICES=0 python vanilla_jpo_trainer.py --dataset_name ../data/tldr_data/openai_tldr_unique_dpo_format.jsonl --eval_dataset_name ../data/tldr_data/val_dpo_format.jsonl --output_dir /local2/hbansal/pref_augment/
 """

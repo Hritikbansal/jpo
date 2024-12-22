@@ -63,7 +63,7 @@ if is_deepspeed_available():
     import deepspeed
 
 
-class CustomDoveTrainer(DPOTrainer):
+class CustomJpoTrainer(DPOTrainer):
     r"""
     Initialize DPOTrainer.
 

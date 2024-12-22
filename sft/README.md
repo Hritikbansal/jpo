@@ -7,7 +7,7 @@ This repository contains the code necessary for fine-tuning the Mistral-7B model
 # How to run
 - Acquire a Hugging Face authentication token by visiting [here](https://huggingface.co/settings/tokens).
 - Export the environment variable with the obtained token. Alternatively, can be passed in the command line as shown in following section -
-- Change the prefix prompt according to the dataset [here](https://github.com/Hritikbansal/dove/blob/main/sft/core/supervised_dataset.py).
+- Change the prefix prompt according to the dataset [here](https://github.com/Hritikbansal/jpo/blob/main/sft/core/supervised_dataset.py).
 
 Run training code:
 
