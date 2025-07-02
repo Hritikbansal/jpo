@@ -10,7 +10,7 @@
 [[Paper](https://arxiv.org/abs/2404.00530)] [[🤗 Huggingface Dataset](https://huggingface.co/datasets/jointpreferences/sft_and_pref_data/tree/main/data)] [[🤗 Checkpoints](https://huggingface.co/jointpreferences)] [[Twitter](https://twitter.com/hbXNov)] [[Website](https://huggingface.co/jointpreferences)]
 
 
-<h1 align="center"><img src="data/jpo.webp" width="30%"></h1>
+
 <p align="center"><i> JPO 🕊️, a new objective for aligning LLMs that optimizes preferences over joint instruction-response pairs.</i>
 
  Code for the Paper "[Comparing Bad Apples to Good Oranges: Aligning Large Language Models via Joint Preference Optimization](https://arxiv.org/abs/2404.00530)".
